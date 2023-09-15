@@ -2,11 +2,7 @@ const express = require('express')  // importanto o modulo do express
 
 const app = express() // criando a instanticia do express na const app
 
-app.get("/", function(req,res){  // criando uma rota
 
-    res.send("seja bem vindo Eduardo!!")
-
-})
 
 app.get("/home", function(req,res){ 
 
