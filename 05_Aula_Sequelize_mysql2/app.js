@@ -1,16 +1,23 @@
-const express = require('express')
+const express = require('express')  // importanto o modulo do express
 
+const app = express() // criando a instanticia do express na const app
 
-const app = express()
+const Sequelize = require("sequelize")
 
-
-app.get('/', function(req,res){
-
-    res.send("Seja bem vindo")
-
+const sequelize = new Sequelize('produtos', 'root', '', {
+    host: 'localhost',
+    dialect: 'mysql'
 })
 
 
-app.listen(8081,()=>{
-    console.log("servidor funcional na porta 8081")
+
+sequelize.authenticate().then(function(){ // verificação de erros na conexeção 
+    console.log("conectado com sucesso")
+}).catch(function(erro){
+    console.log("falha ao si conectar"+erro)
+})
+
+
+app.listen(8081, ()=>{ // liganod servidor e utilizando uma função callbeck
+    console.log("servidor rodando na porta 8081")
 })
