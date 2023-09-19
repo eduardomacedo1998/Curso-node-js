@@ -18,11 +18,10 @@ const Postagens = sequelize.define('postagens',{  // CRIANDO UM MODULO USANDO SE
 })
 
 
-usuarios.create({
-    nome_user: "pedro",
-    senha: "minhasenha"
+Postagens.create({
+    titulo: "minha primeira postagem",
+    conteudo: "minha viagem a frança em setembro, lembrança"
 })
-
 
 
 
