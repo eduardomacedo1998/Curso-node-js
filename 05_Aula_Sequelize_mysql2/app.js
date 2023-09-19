@@ -1,23 +1,29 @@
-const express = require('express')  // importanto o modulo do express
-
-const app = express() // criando a instanticia do express na const app
 
 const Sequelize = require("sequelize")
 
-const sequelize = new Sequelize('produtos', 'root', '', {
+const sequelize = new Sequelize('dados', 'root', '123456', {
     host: 'localhost',
     dialect: 'mysql'
 })
 
 
+const Postagens = sequelize.define('postagens',{  // CRIANDO UM MODULO USANDO SEQUELIZE 
+     titulo: {
+        type: Sequelize.STRING // definindo o tipo da variavel string equivale ao varchar
+     },
 
-sequelize.authenticate().then(function(){ // verificação de erros na conexeção 
-    console.log("conectado com sucesso")
-}).catch(function(erro){
-    console.log("falha ao si conectar"+erro)
+     conteudo: {
+        type: Sequelize.TEXT 
+     },
 })
 
 
-app.listen(8081, ()=>{ // liganod servidor e utilizando uma função callbeck
-    console.log("servidor rodando na porta 8081")
+usuarios.create({
+    nome_user: "pedro",
+    senha: "minhasenha"
 })
+
+
+
+
+
