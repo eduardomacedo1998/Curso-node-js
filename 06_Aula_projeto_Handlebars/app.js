@@ -6,6 +6,7 @@ const Sequelize = require("sequelize")
 
 
 // Config
+
   // Template Engine
 
   app.engine('handlebars', handlebars.engine({
@@ -13,7 +14,7 @@ const Sequelize = require("sequelize")
 }));
 app.set('view engine', 'handlebars');
 
-  // Body parser 
+  // Body parser configuração padrão 
 
   app.use(bodyParser.urlencoded({extended:false}))
   app.use(bodyParser.json())
